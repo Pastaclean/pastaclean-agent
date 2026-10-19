@@ -1,0 +1,45 @@
+{
+  "name": "@pastaclean/mcp",
+  "version": "0.1.2",
+  "description": "MCP server: let your AI assistant search and order at pastaclean.tv on your behalf. You set the limits, you pay.",
+  "type": "module",
+  "bin": {
+    "pastaclean-mcp": "src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "skill",
+    "skills"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^3.25.0"
+  },
+  "mcpName": "io.github.Pastaclean/pastaclean",
+  "homepage": "https://www.pastaclean.tv/agent-api/SKILL.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pastaclean/pastaclean-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pastaclean/pastaclean-agent/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "pastaclean",
+    "shopping",
+    "agent",
+    "ai-agent",
+    "skill"
+  ],
+  "author": "Pastaclean"
+}
