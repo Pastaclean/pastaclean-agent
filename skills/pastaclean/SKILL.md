@@ -47,7 +47,7 @@ You cannot send prices, vouchers, addresses or payment methods. The customer's a
    - Free shipping: the quote tells you `freeShippingFrom` and `freeShippingMissing`. You may mention it. **Never add products on your own.**
 3. **Ask for a clear yes.** No yes, no order.
 4. **Order** (`POST /orders`) with a fresh `Idempotency-Key` (8–100 chars, `A-Z a-z 0-9 _ -`, e.g. a UUID). On timeout or network error, retry with the **same** key, never a new one, or you create a second order.
-5. **Send the `paymentUrl`** to the human right away. The order counts only after they pay. Unpaid orders block new ones (max. 3 open).
+5. **Send the `paymentUrl`** to the human right away. The order counts only after they pay. Unpaid orders block new ones (a few at most, usually 3).
 
 ## 4. Errors
 
@@ -58,7 +58,9 @@ Answers look like `{"error":{"code":"…","message":"…"}}`. Do not try to work
 | `invalid_key` (401) | key wrong or blocked | ask the human for a new key |
 | `order_limit`, `month_limit` | over the limit the human set | tell them; they can order themselves or raise the limit |
 | `only_reorder` | key may only reorder past products | tell them |
-| `too_many_open` | 3 unpaid orders | send them their open `paymentUrl`s |
+| `too_many_open` (409) | too many unpaid orders | send them their open `paymentUrl`s (`GET /orders`) |
+| `product_unavailable`, `quantity_unavailable` (422) | out of stock or not enough | tell them, suggest a smaller quantity or an alternative (ask first) |
+| `in_progress` (409) | same Idempotency-Key still running | wait a few seconds, retry with the same key |
 | `rate_limited` (429) | too many requests | wait a minute |
 
 ## 5. Rules
