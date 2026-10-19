@@ -47,7 +47,7 @@ You cannot send prices, vouchers, addresses or payment methods. The customer's a
    - Free shipping: the quote tells you `freeShippingFrom` and `freeShippingMissing`. You may mention it. **Never add products on your own.**
 3. **Ask for a clear yes.** No yes, no order.
 4. **Order** (`POST /orders`) with a fresh `Idempotency-Key` (8–100 chars, `A-Z a-z 0-9 _ -`, e.g. a UUID). On timeout or network error, retry with the **same** key, never a new one, or you create a second order.
-5. **Send the `paymentUrl`** to the human right away. The order counts only after they pay. Unpaid orders block new ones (a few at most, usually 3).
+5. **Send the `paymentUrl`** to the human right away. Do not name a payment method: the customer picks it on the payment page (`paymentMethod` stays empty until paid). The order counts only after they pay. Unpaid orders block new ones (a few at most, usually 3).
 
 ## 4. Errors
 
