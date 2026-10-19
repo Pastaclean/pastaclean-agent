@@ -6,7 +6,17 @@ Let your AI assistant search [pastaclean.tv](https://www.pastaclean.tv), price a
 - **The assistant never pays.** Every order comes with a payment link that you open and pay yourself.
 - Prices, shipping and availability always come from the shop. The assistant cannot set prices, vouchers or addresses.
 
-## Easiest: send your assistant this message
+## Easiest: connect with your Pastaclean login (no key)
+
+In apps that support remote MCP connectors (claude.ai, Claude Desktop, ChatGPT developer mode, Cursor …) add:
+
+```
+https://www.pastaclean.tv/agent-api/mcp
+```
+
+Click *Connect*, log in with your Pastaclean account and confirm the limits. That's it. You can see and block the connection any time in *Mein Konto → KI-Assistenten*.
+
+## Or: send your assistant this message
 
 > Please set yourself up for my Pastaclean shop. Instructions: https://www.pastaclean.tv/agent-api/SKILL.md
 > My key (secret, never post it): `pca_…`

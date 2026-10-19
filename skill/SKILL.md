@@ -10,6 +10,8 @@ The customer created a key for you in their account (*Mein Konto → KI-Assisten
 
 **You never pay.** Every order returns a `paymentUrl`. The human opens it, checks the order and pays.
 
+If your app supports remote MCP connectors, the human can skip the key: add `https://www.pastaclean.tv/agent-api/mcp` and log in with the Pastaclean account (OAuth). Then just use the `pastaclean_*` tools; the rules below still apply.
+
 ## 1. Setup (do this once, right now)
 
 1. Take the key the human gave you (`pca_…`). Store it as a secret, e.g. env `PASTACLEAN_API_KEY` or your secret store. **Never print, log or post it anywhere.** If it was pasted into a shared chat, tell the human to block it in their account and create a new one.
