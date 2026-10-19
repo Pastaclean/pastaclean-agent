@@ -1,6 +1,6 @@
 {
   "name": "@pastaclean/mcp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "MCP server: let your AI assistant search and order at pastaclean.tv on your behalf. You set the limits, you pay.",
   "type": "module",
   "bin": {
@@ -23,7 +23,7 @@
     "@modelcontextprotocol/sdk": "^1.32.1",
     "zod": "^3.25.0"
   },
-  "mcpName": "io.github.Pastaclean/pastaclean",
+  "mcpName": "tv.pastaclean/mcp",
   "homepage": "https://www.pastaclean.tv/agent-api/SKILL.md",
   "repository": {
     "type": "git",

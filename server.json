@@ -1,18 +1,32 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.Pastaclean/pastaclean",
+  "name": "tv.pastaclean/mcp",
   "description": "Search and order at pastaclean.tv for your human. Limits set by the customer, customer pays.",
-  "repository": { "url": "https://github.com/Pastaclean/pastaclean-agent", "source": "github" },
-  "version": "0.1.2",
+  "repository": {
+    "url": "https://github.com/Pastaclean/pastaclean-agent",
+    "source": "github"
+  },
+  "version": "0.1.3",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@pastaclean/mcp",
-      "version": "0.1.2",
-      "transport": { "type": "stdio" },
+      "version": "0.1.3",
+      "transport": {
+        "type": "stdio"
+      },
       "environmentVariables": [
-        { "name": "PASTACLEAN_API_KEY", "description": "Key from pastaclean.tv → Mein Konto → KI-Assistenten (pca_…)", "isRequired": true, "isSecret": true },
-        { "name": "PASTACLEAN_BASE_URL", "description": "Default https://www.pastaclean.tv", "isRequired": false }
+        {
+          "name": "PASTACLEAN_API_KEY",
+          "description": "Key from pastaclean.tv → Mein Konto → KI-Assistenten (pca_…)",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "PASTACLEAN_BASE_URL",
+          "description": "Default https://www.pastaclean.tv",
+          "isRequired": false
+        }
       ]
     }
   ]
